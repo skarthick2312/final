@@ -1,0 +1,311 @@
+package com.fresco;
+import java.util.List;
+class Passanger
+{
+    int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public float getFare() {
+        return fare;
+    }
+
+    public void setFare(float fare) {
+        this.fare = fare;
+    }
+    float fare;
+    public Passanger(int id, float fare)
+    {
+        this.id=id;
+        this.fare=fare;
+    }
+}
+public class BusProb {
+
+    public String output(int capacity, int stops, List<String> listOfInputStrings, String query)
+    {
+        String outstring="";
+        if(capacity)
+        return outstring;
+    }
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int capacity=sc.nextInt();
+      int stops=sc.nextInt();
+       List<String> listOfInputs=new ArrayList<>(stops);
+       for(int i=0;i<stops;i++) {
+       listofInputs.add[i](getId());
+       }
+       System.out.println(output(capacity,stops,listofInputs,query);)
+
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+class Register {
+    
+    private static Register register;
+    private Register(){}
+    
+    public static Register getInstance() {
+        if(register==null) {
+            register=new Register();
+        }
+        return register;
+    }
+    /*
+     * Complete the 'getTotalBill' function below.
+     *
+     * The function is expected to return a STRING.
+     * The function accepts MAP itemDetails as parameter.
+     */
+
+    public String getTotalBill(Map<String,Integer> itemDetails) {
+        double sum=0.0;
+        String str="";
+        for(Map.Entry mapElement : itemDetails.entrySet()) {
+            
+            String key=(String)mapElement.getKey();
+            int value=(int)mapElement.getValue();
+            if(key.equals("apple")){
+                sum=sum+(double)value*2.0;
+            }
+            else if(key.equals("orange")){
+                sum=sum+(double)value*1.5;
+            }
+            else if(key.equals("mango")){
+                sum=sum+(double)value*1.2;
+            }
+            else if(key.equals("grape")){
+                sum=sum+(double)value*1.0;
+            }
+            
+         }
+         str=str+sum;
+         return str;
+
+        
+
+    }
+
+}
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        
+        Scanner readInput = new Scanner(System.in);        
+        String[] input=readInput.nextLine().split(" ");                
+        Map<String,Integer> myItems=new HashMap<String,Integer>();
+        for(int i=0;i<input.length;i+=2){
+          myItems.put(input[i],Integer.parseInt(input[i+1]));	
+        }
+        Register regObj = Register.getInstance();        
+        System.out.println(regObj.getTotalBill(myItems));
+        readInput.close();
+        
+    }
+}-------------------------------------------------------------------------------------------------------------------
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String a=sc.nextLine();
+		char b='*';
+		a=a.replace(' ',b);
+		StringBuilder a1=new StringBuilder(a);
+		a1=a1.reverse();
+		StringBuffer fi=new StringBuffer(a1);
+		for(int i=0;i<a1.length();i++)
+		{
+		    if(Character.isLowerCase(a1.charAt(i))){
+		    fi.setCharAt(i,Character.toUpperCase(a1.charAt(i)));
+		    }
+		    else if(Character.isUpperCase(a1.charAt(i))){
+		    fi.setCharAt(i,Character.toLowerCase(a1.charAt(i)));
+		    }
+		}
+		
+		String str=" "; 
+		for(int i=0;i<fi.length();i++)
+		{
+		    if(i%2!=0)
+		    {
+		        str=str+(int)fi.charAt(i);
+		    }
+		    else
+		    str=str+fi.charAt(i);
+		}
+	
+		
+	System.out.print(str+"3");
+	}
+}
+-------------------------------------------------------------------------------------------------------------------------
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String a=sc.nextLine();
+		char b=' ';
+		a=a.replace('*',b);
+		String str=""; 
+		int num=0;
+		for(int i=0;i<a.length()-1;i++)
+		{
+		    if(a.charAt(i)==' ')
+		    str=str+ " ";
+		   else if((!(a.charAt(i)>='A' && a.charAt(i)<='Z')) && (!(a.charAt(i)>='a' && a.charAt(i)<='z')))
+		    {
+		   num=num*10+(a.charAt(i)-'0');
+		   //if(num>=32 && num<=122)
+		   //{
+		     //  char ch=((char)num);
+		       //str=str+Character.toString(ch);
+		       //num=0;
+		   }
+		    }
+		    else{
+                      if(num>=32 && num<=122)
+		   {
+		       char ch=((char)num);
+		       str=str+Character.toString(ch);
+		       num=0;
+		    str=str+a.charAt(i);
+		    
+		}
+		String a1=" ";
+		for(int i=str.length()-1;i>=0;i--)
+		{
+		    a1=a1+str.charAt(i);
+		}
+	
+		String fi=" ";
+		for(int i=0;i<a1.length();i++)
+		{
+		    if(a1.charAt(i)==' ')
+		    fi=fi+" ";
+		    else if(Character.isLowerCase(a1.charAt(i)))
+		    fi=fi+Character.toUpperCase(a1.charAt(i));
+		    else if(Character.isUpperCase(a1.charAt(i)))
+		    fi=fi+Character.toLowerCase(a1.charAt(i));
+		    else 
+		    fi=fi+a1.charAt(i);
+		}
+		
+	System.out.print(fi);
+	}
+}
+--------------------------------------------------------------------------------------------------------------------------
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+
+	public static String cipher(String str) {
+
+		char arr[] = str.toCharArray();
+		int length = str.length();
+		// upper case to lower case and lower case to upper case
+		for (int i = 0; i < length; i++) {
+
+			if (arr[i] >= 'A' && arr[i] <= 'Z') {
+				arr[i] = (char) (arr[i] + 32);
+
+			} else if (arr[i] >= 'a' && arr[i] <= 'z') {
+				arr[i] = (char) (arr[i] - 32);
+			}
+
+		}
+
+		// Reverse using string builder
+		StringBuilder strblr = new StringBuilder(String.valueOf(arr));
+		arr = strblr.reverse().toString().toCharArray();
+
+		// replace space by *
+		arr = String.valueOf(arr).replace(' ', '*').toCharArray();
+		str = "";
+
+		// even position to ascii
+		for (int i = 0; i < length; i++) {
+			if (i % 2 == 0) {
+				str = str + arr[i];
+			} else {
+				str = str + ((int) arr[i]);
+			}
+		}
+
+		// append a number to string
+		str = str + (new Random().nextInt(9 - 0 + 1) + 0);
+
+		return str;
+	}
+
+	public static String diCipher(String str) {
+		// remove the last integer
+		int length = str.length();
+		str = str.substring(0, length - 1);
+		length = str.length();
+
+		char arr[] = str.toCharArray();
+		str = "";
+		int a = 0;
+
+		// restore even places
+		for (int i = 0; i < length; i++) {
+			if (arr[i] >= '0' && arr[i] <= '9') {
+				a = a * 10 + Character.getNumericValue(arr[i]);
+			} else {
+				if (a != 0) {
+					str = str + (char) a;
+					a = 0;
+				}
+				str = str + arr[i];
+			}
+		}
+		if (a != 0) {
+			str = str + (char) a;
+			a = 0;
+		}
+
+		// upper case to lower case and lower case to upper case
+		arr = str.toCharArray();
+		length = str.length();
+		for (int i = 0; i < length; i++) {
+
+			if (arr[i] >= 'A' && arr[i] <= 'Z') {
+				arr[i] = (char) (arr[i] + 32);
+
+			} else if (arr[i] >= 'a' && arr[i] <= 'z') {
+				arr[i] = (char) (arr[i] - 32);
+			}
+
+		}
+
+		// Reverse using string builder
+		StringBuilder strblr = new StringBuilder(String.valueOf(arr));
+
+		return strblr.reverse().toString().replace('*', ' ');
+	}
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+
+		String str1 = s.nextLine();
+		String str2 = s.nextLine();
+
+		System.out.println(cipher(str1));
+		System.out.println(diCipher(str2));
+
+		s.close();
+	}
+}
+-------------------------------------------------------------------------------------------------------------------------
